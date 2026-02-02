@@ -78,26 +78,36 @@
 #inforuta {
   display: none;
   padding: 10px;
-  position: fixed;  
-  width: 200px;
-  bottom: 40px; /* Sätt avstånd från botten av fönstret */
-  right: 40px;  /* Sätt avstånd från högerkanten av fönstret */
+  position: fixed;
+  width: 260px;          /* lite bredare pga fler rader */
+  bottom: 40px;
+  right: -40px;
 }
 
-/* Titel i inforutan */
 #inforuta #titel {
-  font-family: 'CircularStd-Bold', sans-serif; /* Använd CircularStd-Bold för titeln */
-  font-size: 1.2em;  /* Justera storlek efter behov */
-  color: #90b19e;    /* Titelns färg */
-  margin: 0;
+  font-family: 'CircularStd-Bold', sans-serif;
+  font-size: 1.2em;
+  color: #90b19e;
+  margin: 0 0 10px 0;
 }
 
-/* Text i inforutan */
-#inforuta #text {
-  font-family: 'IvarText-Regular', sans-serif; /* Använd IvarText-Regular för texten */
-  font-size: 1em;  /* Justera storlek efter behov */
-  color: #90b19e;  /* Textens färg */
-  margin: 10px 0 0 0; /* Lite mellanrum ovanför texten */
+#inforuta .rad {
+  margin: 6px 0;
+  line-height: 1.25;
+}
+
+#inforuta .label {
+  display: block; /* label på egen rad */
+  font-family: 'CircularStd-Bold', sans-serif;
+  font-size: 0.95em;
+  color: #90b19e;
+}
+
+#inforuta .value {
+  display: block; /* värdet på egen rad */
+  font-family: 'IvarText-Regular', sans-serif;
+  font-size: 1em;
+  color: #90b19e;
 }
 
 /* MOBIL */
@@ -173,7 +183,7 @@
 
   <!-- Titeln -->
   <div id="title">
-    Titel för sidan <span>Underrubrik här</span>
+    Klimatprognos <span>Malmö Stads Översiktsplan</span>
   </div>
 
   <!-- Skapa en container för SVG med en synlig röd ram -->
@@ -293,61 +303,73 @@
 
   <!-- Inforuta som visas när man klickar på en yta -->
   <div id="inforuta">
-    <h2 id="titel"></h2>
-    <p id="text"></p>
+  <h2 id="titel"></h2>
+
+  <div class="rad">
+    <span class="label">Antal bostäder</span>
+    <span class="value" id="antal_bostader"></span>
   </div>
 
- <!-- Lägg till PapaParse -->
+  <div class="rad">
+    <span class="label">Antal arbetstillfällen</span>
+    <span class="value" id="antal_arbetstillfallen"></span>
+  </div>
+
+  <div class="rad">
+    <span class="label">Total klimatprognos</span>
+    <span class="value" id="total_klimatprognos"></span>
+  </div>
+
+  <div class="rad">
+    <span class="label">Klimatprognos</span>
+    <span class="value" id="klimatprognos"></span>
+  </div>
+</div>
+
+<!-- Lägg till PapaParse -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
 
 <script>
-  // Läs in CSV-filen med PapaParse
   Papa.parse("data.csv", {
-    download: true, // Ladda filen från servern
-    header: true,   // Anta att den första raden är header
+    download: true,
+    header: true,
     complete: function(results) {
-      const data = results.data; // Här får vi tillgång till CSV-datan som en array
 
-      // Lägg till eventlyssnare på varje path och polygon med ett unikt id
+      // Ta bort ev. tomma rader
+      const data = results.data.filter(r => r.yta_id);
+
+      // En funktion som fyller inforutan
+      function uppdateraInforuta(ytaInfo) {
+        if (!ytaInfo) return;
+
+        document.getElementById('titel').innerText = ytaInfo.titel || '';
+        document.getElementById('antal_bostader').innerText = ytaInfo.antal_bostader || '';
+        document.getElementById('antal_arbetstillfallen').innerText = ytaInfo.antal_arbetstillfallen || '';
+        document.getElementById('total_klimatprognos').innerText = ytaInfo.total_klimatprognos || '';
+        document.getElementById('klimatprognos').innerText = ytaInfo.klimatprognos || '';
+
+        document.getElementById('inforuta').style.display = 'block';
+      }
+
+      // Eventlyssnare
       document.querySelectorAll('path[id^="yta_"], polygon[id^="yta_"]').forEach(function(element) {
-        // Hover-effekt - visa inforuta
+
         element.addEventListener('mouseover', function() {
-          const ytaId = element.id; // Hämta id:t för den hoverade ytan
-
-          // Hitta informationen för den hoverade ytan från CSV-datan
+          const ytaId = element.id;
           const ytaInfo = data.find(row => row.yta_id === ytaId);
-
-          // Uppdatera inforutan med informationen
-          if (ytaInfo) {
-            document.getElementById('titel').innerText = ytaInfo.titel;
-            document.getElementById('text').innerText = ytaInfo.text;
-
-            // Visa inforutan
-            document.getElementById('inforuta').style.display = 'block';
-          }
+          uppdateraInforuta(ytaInfo);
         });
 
-        // Dölja inforutan när muspekaren lämnar ytan
         element.addEventListener('mouseout', function() {
-          document.getElementById('inforuta').style.display = 'none'; // Döljer inforutan
+          document.getElementById('inforuta').style.display = 'none';
         });
 
-        // Klickhändelse - visa information i inforutan
         element.addEventListener('click', function() {
-          const ytaId = element.id; // Hämta id:t för den klickade ytan
-
-          // Hitta informationen för den klickade ytan från CSV-datan
+          const ytaId = element.id;
           const ytaInfo = data.find(row => row.yta_id === ytaId);
-
-          // Uppdatera inforutan med informationen
-          if (ytaInfo) {
-            document.getElementById('titel').innerText = ytaInfo.titel;
-            document.getElementById('text').innerText = ytaInfo.text;
-
-            // Visa inforutan vid klick
-            document.getElementById('inforuta').style.display = 'block';
-          }
+          uppdateraInforuta(ytaInfo);
         });
+
       });
     }
   });
