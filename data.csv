@@ -1,45 +1,44 @@
 yta_id;titel;antal_bostader;antal_arbetstillfallen;total_klimatprognos;best_practice
-yta_1;Titel för yta 1;45 000;xxx;357 ton CO2e;xxx kg CO2e/kvm BTA
-yta_2;Titel för yta 2;xxx;xxx;xxx ton CO2e;xxx kg CO2e/kvm BTA
-yta_3;Titel för yta 3;xxx;xxx;xxx ton CO2e;xxx kg CO2e/kvm BTA
-yta_4;Titel för yta 4;xxx;xxx;xxx ton CO2e;xxx kg CO2e/kvm BTA
-yta_5;Titel för yta 5;xxx;xxx;xxx ton CO2e;xxx kg CO2e/kvm BTA
-yta_6;Titel för yta 6;xxx;xxx;xxx ton CO2e;xxx kg CO2e/kvm BTA
-yta_7;Titel för yta 7;xxx;xxx;xxx ton CO2e;xxx kg CO2e/kvm BTA
-yta_8;Titel för yta 8;xxx;xxx;xxx ton CO2e;xxx kg CO2e/kvm BTA
-yta_9;Titel för yta 9;xxx;xxx;xxx ton CO2e;xxx kg CO2e/kvm BTA
-yta_10;Titel för yta 10;xxx;xxx;xxx ton CO2e;xxx kg CO2e/kvm BTA
-yta_11;Titel för yta 11;xxx;xxx;xxx ton CO2e;xxx kg CO2e/kvm BTA
-yta_12;Titel för yta 12;xxx;xxx;xxx ton CO2e;xxx kg CO2e/kvm BTA
-yta_13;Titel för yta 13;xxx;xxx;xxx ton CO2e;xxx kg CO2e/kvm BTA
-yta_14;Titel för yta 14;xxx;xxx;xxx ton CO2e;xxx kg CO2e/kvm BTA
-yta_15;Titel för yta 15;xxx;xxx;xxx ton CO2e;xxx kg CO2e/kvm BTA
-yta_16;Titel för yta 16;xxx;xxx;xxx ton CO2e;xxx kg CO2e/kvm BTA
-yta_17;Titel för yta 17;xxx;xxx;xxx ton CO2e;xxx kg CO2e/kvm BTA
-yta_18;Titel för yta 18;xxx;xxx;xxx ton CO2e;xxx kg CO2e/kvm BTA
-yta_19;Titel för yta 19;xxx;xxx;xxx ton CO2e;xxx kg CO2e/kvm BTA
-yta_20;Titel för yta 20;xxx;xxx;xxx ton CO2e;xxx kg CO2e/kvm BTA
-yta_21;Titel för yta 21;xxx;xxx;xxx ton CO2e;xxx kg CO2e/kvm BTA
-yta_22;Titel för yta 22;xxx;xxx;xxx ton CO2e;xxx kg CO2e/kvm BTA
-yta_23;Titel för yta 23;xxx;xxx;xxx ton CO2e;xxx kg CO2e/kvm BTA
-yta_24;Titel för yta 24;xxx;xxx;xxx ton CO2e;xxx kg CO2e/kvm BTA
-yta_25;Titel för yta 25;xxx;xxx;xxx ton CO2e;xxx kg CO2e/kvm BTA
-yta_26;Titel för yta 26;xxx;xxx;xxx ton CO2e;xxx kg CO2e/kvm BTA
-yta_27;Titel för yta 27;xxx;xxx;xxx ton CO2e;xxx kg CO2e/kvm BTA
-yta_28;Titel för yta 28;xxx;xxx;xxx ton CO2e;xxx kg CO2e/kvm BTA
-yta_29;Titel för yta 29;xxx;xxx;xxx ton CO2e;xxx kg CO2e/kvm BTA
-yta_30;Titel för yta 30;xxx;xxx;xxx ton CO2e;xxx kg CO2e/kvm BTA
-yta_31;Titel för yta 31;xxx;xxx;xxx ton CO2e;xxx kg CO2e/kvm BTA
-yta_32;Titel för yta 32;xxx;xxx;xxx ton CO2e;xxx kg CO2e/kvm BTA
-yta_33;Titel för yta 33;xxx;xxx;xxx ton CO2e;xxx kg CO2e/kvm BTA
-yta_34;Titel för yta 34;xxx;xxx;xxx ton CO2e;xxx kg CO2e/kvm BTA
-yta_35;Titel för yta 35;xxx;xxx;xxx ton CO2e;xxx kg CO2e/kvm BTA
-yta_36;Titel för yta 36;xxx;xxx;xxx ton CO2e;xxx kg CO2e/kvm BTA
-yta_37;Titel för yta 37;xxx;xxx;xxx ton CO2e;xxx kg CO2e/kvm BTA
-yta_38;Titel för yta 38;xxx;xxx;xxx ton CO2e;xxx kg CO2e/kvm BTA
-yta_39;Titel för yta 39;xxx;xxx;xxx ton CO2e;xxx kg CO2e/kvm BTA
-yta_40;Titel för yta 40;xxx;xxx;xxx ton CO2e;xxx kg CO2e/kvm BTA
-yta_41;Titel för yta 41;xxx;xxx;xxx ton CO2e;xxx kg CO2e/kvm BTA
-yta_42;Titel för yta 42;xxx;xxx;xxx ton CO2e;xxx kg CO2e/kvm BTA
-yta_43;Titel för yta 43;xxx;xxx;xxx ton CO2e;xxx kg CO2e/kvm BTA
-yta_44;Titel för yta 44;xxx;xxx;xxx ton CO2e;xxx kg CO2e/kvm BTA
+yta_1;Norra Hamnen, Sege industriområde;0;3 500;62730,83 kg CO2e;120934,82 kg CO2e
+yta_2;Västra Hamnen;4 500;6 000;151809,12 kg CO2e;225087,32 kg CO2e
+yta_3;Inre hamnen, Frihamnen;7 500;14 000;277187,57 kg CO2e;3773,72 kg CO2e
+yta_4;Gamla staden, Slusen, Mamöhus;200;0;5225,58 kg CO2e;0 kg CO2e
+yta_5;Davidshall, Lugnet, Rörsjöstaden;0;0;0 kg CO2e;153032,33 kg CO2e
+yta_6;Östervärn, Kirsebergsstaden;6 500;4 500;194100,27 kg CO2e;3985,31 kg CO2e
+yta_7;Segevång, Segemölla, Rostorp;200;0;4775,58 kg CO2e;0 kg CO2e
+yta_8;Bulltofta, Valdermarsro;0;0;0 kg CO2e;0 kg CO2e
+yta_9;Ribersborgstranden;0;0;0 kg CO2e;1935,72 kg CO2e
+yta_10;Mellanheden, Ribersborg;100;0;2612,79 kg CO2e;26090,23 kg CO2e
+yta_11;Hästhagen, Allmänna sjukhuset;1 000;1 200;33379,61 kg CO2e;12619,75 kg CO2e
+yta_12;Möllevången, Södervärn;500;500;16085,5 kg CO2e;57785,81 kg CO2e
+yta_13;Sorgenfri, Katrinelund, Värnhem;2 500;1 500;72134,39 kg CO2e;1176,46 kg CO2e
+yta_14;Sofielunds industriområde, Annelund;0;200;1208,62 kg CO2e;66796,5 kg CO2e
+yta_15;Rosengård centrum, Herrgården, Emilstorp;3 000;1 500;84748,34 kg CO2e;0 kg CO2e
+yta_16;Håkanstorp, Videdal;0;0;0 kg CO2e;115325,88 kg CO2e
+yta_17;Fortuna Hemgården, Toftanäs, Östra Skrävlinge;4 000;6 000;131770,17 kg CO2e;20795,06 kg CO2e
+yta_18;Limhamns Hamnområde;1 000;250;27188,67 kg CO2e;1764,7 kg CO2e
+yta_19;Gamla Limhamn, Djupadal;0;300;1812,93 kg CO2e;50413,32 kg CO2e
+yta_20;Lorensborg, Stadion;2 000;2 000;62541,99 kg CO2e;50665,14 kg CO2e
+yta_21;Holma, Kroksbäck, Kroksbäcksparken;2 300;1 000;63032,26 kg CO2e;23598,85 kg CO2e
+yta_22;Flensburg, Borgmästaregården;900;1 100;30162,51 kg CO2e;50934,51 kg CO2e
+yta_23;Heleneholm, Kulladal;2 000;2 000;62541,99 kg CO2e;10323,76 kg CO2e
+yta_24;Nydala, Gullviksborg;500;100;13443,26 kg CO2e;12202,33 kg CO2e
+yta_25;Persborg, Augustenborg;500;400;14806,19 kg CO2e;74828,15 kg CO2e
+yta_26;Elisedal, Jägerso;3 500;1 000;92765,74 kg CO2e;18892,88 kg CO2e
+yta_27;Almgården, Höja;900;300;24923,04 kg CO2e;38469,01 kg CO2e
+yta_28;Kvarnby;1 500;1 500;44881,49 kg CO2e;0 kg CO2e
+yta_29;Sibbarp;0;0;0 kg CO2e;55414,02 kg CO2e
+yta_30;Annetorp;2 500;1 000;66862,84 kg CO2e;66989,64 kg CO2e
+yta_31;Elinelund, Kalkbrottet, Del av Vintrie;3 000;1 400;82794,03 kg CO2e;252067,97 kg CO2e
+yta_32;Hyllievång, östra Vintrie;10 000;10 000;317209,94 kg CO2e;15679,64 kg CO2e
+yta_33;Svågertorp;0;2 000;18026,19 kg CO2e;25060,21 kg CO2e
+yta_34;Lindängen, Almvik;1 000;1 000;31720,99 kg CO2e;14705,8 kg CO2e
+yta_35;Fosie Industriområde;0;2 500;15107,74 kg CO2e;50015,93 kg CO2e
+yta_36;Bunkeflostrand;2 000;1 700;58029,06 kg CO2e;31532,38 kg CO2e
+yta_37;Klagshamn;1 500;300;37629,78 kg CO2e;17646,96 kg CO2e
+yta_38;Naffentorp;0;3 000;18129,28 kg CO2e;17771,09 kg CO2e
+yta_39;Tygelsjö, Västra Klagstorp;800;300;20915,25 kg CO2e;2941,16 kg CO2e
+yta_40;Lockarp;0;500;3021,55 kg CO2e;17646,96 kg CO2e
+yta_41;Glostorp;0;3 000;18129,28 kg CO2e;19926,3 kg CO2e
+yta_42;Oxie Kyrkby, Oxievång;800;500;23608,87 kg CO2e;6267,93 kg CO2e
+yta_43;Södra Salerup;0;400;8357,24 kg CO2e;0 kg CO2e
