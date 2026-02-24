@@ -1,5 +1,5 @@
 yta_id;titel;antal_bostader;antal_arbetstillfallen;total_klimatprognos;best_practice
-yta_1;Norra Hamnen, Sege industriområde;0;3 500;62730,83 kg CO2e;112834,82 kg CO2e
+yta_1;Norra Hamnen, Sege industriområde;0;3 500;21150,83 kg CO2e;112834,82 kg CO2e
 yta_2;Västra Hamnen;4 500;6 000;151809,12 kg CO2e;206187,32 kg CO2e
 yta_3;Inre hamnen, Frihamnen;7 500;14 000;277187,57 kg CO2e;3773,72 kg CO2e
 yta_4;Gamla staden, Slusen, Mamöhus;200;0;5225,58 kg CO2e;0 kg CO2e
@@ -30,8 +30,8 @@ yta_28;Kvarnby;1 500;1 500;44881,49 kg CO2e;0 kg CO2e
 yta_29;Sibbarp;0;0;0 kg CO2e;54064,02 kg CO2e
 yta_30;Annetorp;2 500;1 000;66862,84 kg CO2e;65099,64 kg CO2e
 yta_31;Elinelund, Kalkbrottet, Del av Vintrie;3 000;1 400;82794,03 kg CO2e;238567,97 kg CO2e
-yta_32;Hyllievång, östra Vintrie;10 000;10 000;317209,94 kg CO2e;13519,64 kg CO2e
-yta_33;Svågertorp;0;2 000;18026,19 kg CO2e;23710,21 kg CO2e
+yta_32;Hyllievång, östra Vintrie;10 000;10 000;317209,94 kg CO2e;9064,64 kg CO2e
+yta_33;Svågertorp;0;2 000;12086,19 kg CO2e;23710,21 kg CO2e
 yta_34;Lindängen, Almvik;1 000;1 000;31720,99 kg CO2e;11330,8 kg CO2e
 yta_35;Fosie Industriområde;0;2 500;15107,74 kg CO2e;47720,93 kg CO2e
 yta_36;Bunkeflostrand;2 000;1 700;58029,06 kg CO2e;31127,38 kg CO2e
@@ -39,6 +39,6 @@ yta_37;Klagshamn;1 500;300;37629,78 kg CO2e;13596,96 kg CO2e
 yta_38;Naffentorp;0;3 000;18129,28 kg CO2e;17366,09 kg CO2e
 yta_39;Tygelsjö, Västra Klagstorp;800;300;20915,25 kg CO2e;2266,16 kg CO2e
 yta_40;Lockarp;0;500;3021,55 kg CO2e;13596,96 kg CO2e
-yta_41;Glostorp;0;3 000;18129,28 kg CO2e;19386,3 kg CO2e
-yta_42;Oxie Kyrkby, Oxievång;800;500;23608,87 kg CO2e;6267,93 kg CO2e
-yta_43;Södra Salerup;0;400;8357,24 kg CO2e;0 kg CO2e
+yta_41;Glostorp;0;3 000;18129,28 kg CO2e;18272,55 kg CO2e
+yta_42;Oxie Kyrkby, Oxievång;800;500;22123,87 kg CO2e;1812,93 kg CO2e
+yta_43;Södra Salerup;0;400;2417,24 kg CO2e;0 kg CO2e
