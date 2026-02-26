@@ -1,45 +1,45 @@
 yta_id;titel;antal_bostader;antal_arbetstillfallen;lfm_30;best_practice;business_as_usual
--; ;66 700;76 450;2140465,5 ton CO2e;1643669,43 ton CO2e;3217560,04 ton CO2e
-yta_11;Norra Hamnen, Sege industriområde;0;0;21150,83 ton CO2e;112834,82 ton CO2e;231198,5 ton CO2e
-yta_14;Västra Hamnen;4 500;6 000;151809,12 ton CO2e;206187,32 ton CO2e;421589,4 ton CO2e
-yta_12;Inre hamnen, Frihamnen;7 500;14 000;277187,57 ton CO2e;3773,72 ton CO2e;8200,46 ton CO2e
-yta_13;Gamla staden, Slusen, Mamöhus;200;0;5225,58 ton CO2e;0 ton CO2e;0 ton CO2e
-yta_15;Davidshall, Lugnet, Rörsjöstaden;0;0;0 ton CO2e;146957,33 ton CO2e;302503,98 ton CO2e
-yta_9;Östervärn, Kirsebergsstaden;6 500;4 500;194100,27 ton CO2e;3985,31 ton CO2e;6597,45 ton CO2e
-yta_10;Segevång, Segemölla, Rostorp;200;0;4775,58 ton CO2e;0 ton CO2e;0 ton CO2e
+-;     ;66 700;76 450;2 140 500 ton CO2e;1 582 600 ton CO2e;3 339 700 ton CO2e
+yta_11;Norra Hamnen, Sege industriområde;0;0;21 200 ton CO2e;15 900 ton CO2e;31 700 ton CO2e
+yta_14;Västra Hamnen;4 500;6 000;151 800 ton CO2e;110 900 ton CO2e;235 000 ton CO2e
+yta_12;Inre hamnen, Frihamnen;7 500;14 000;277 200 ton CO2e;203 000 ton CO2e;428 000 ton CO2e
+yta_13;Gamla staden, Slusen, Mamöhus;200;0;5 200 ton CO2e;3 800 ton CO2e;8 200 ton CO2e
+yta_15;Davidshall, Lugnet, Rörsjöstaden;0;0;0 ton CO2e;0 ton CO2e;0 ton CO2e
+yta_9;Östervärn, Kirsebergsstaden;6 500;4 500;194 100 ton CO2e;144 200 ton CO2e;308 100 ton CO2e
+yta_10;Segevång, Segemölla, Rostorp;200;0;4 800 ton CO2e;3 600 ton CO2e;7 500 ton CO2e
 yta_8;Bulltofta, Valdermarsro;0;0;0 ton CO2e;0 ton CO2e;0 ton CO2e
-yta_27;Ribersborgstranden;0;0;0 ton CO2e;1935,72 ton CO2e;4208,26 ton CO2e
-yta_26;Mellanheden, Ribersborg;100;0;2612,79 ton CO2e;24470,23 ton CO2e;52239,98 ton CO2e
-yta_24;Hästhagen, Allmänna sjukhuset;1 000;1 200;33379,61 ton CO2e;11944,75 ton CO2e;25573,64 ton CO2e
-yta_16;Möllevången, Södervärn;500;500;16085,5 ton CO2e;55760,81 ton CO2e;109708,15 ton CO2e
-yta_17;Sorgenfri, Katrinelund, Värnhem;2 500;1 500;72134,39 ton CO2e;906,46 ton CO2e;1812,93 ton CO2e
-yta_18;Sofielunds industriområde, Annelund;0;200;1208,62 ton CO2e;64771,5 ton CO2e;127201,86 ton CO2e
-yta_19;Rosengård centrum, Herrgården, Emilstorp;3 000;1 500;84748,34 ton CO2e;0 ton CO2e;0 ton CO2e
-yta_5;Håkanstorp, Videdal;0;0;0 ton CO2e;107225,88 ton CO2e;187057,03 ton CO2e
-yta_6;Fortuna Hemgården, Toftanäs, Östra Skrävlinge;4 000;6 000;131770,17 ton CO2e;20457,56 ton CO2e;42205,61 ton CO2e
-yta_28;Limhamns Hamnområde;1 000;250;27188,67 ton CO2e;1359,7 ton CO2e;2719,39 ton CO2e
-yta_29;Gamla Limhamn, Djupadal;0;300;1812,93 ton CO2e;47713,32 ton CO2e;93865,88 ton CO2e
-yta_25;Lorensborg, Stadion;2 000;2 000;62541,99 ton CO2e;49315,14 ton CO2e;92143,5 ton CO2e
-yta_30;Holma, Kroksbäck, Kroksbäcksparken;2 300;1 000;63032,26 ton CO2e;22113,85 ton CO2e;47197,27 ton CO2e
-yta_23;Flensburg, Borgmästaregården;900;1 100;30162,51 ton CO2e;48234,51 ton CO2e;95018,23 ton CO2e
-yta_22;Heleneholm, Kulladal;2 000;2 000;62541,99 ton CO2e;10188,76 ton CO2e;21038,24 ton CO2e
-yta_21;Nydala, Gullviksborg;500;100;13443,26 ton CO2e;11662,33 ton CO2e;21938,55 ton CO2e
-yta_20;Persborg, Augustenborg;500;400;14806,19 ton CO2e;73478,15 ton CO2e;137253,53 ton CO2e
-yta_3;Elisedal, Jägerso;3 500;1 000;92765,74 ton CO2e;18487,88 ton CO2e;38081,52 ton CO2e
-yta_4;Almgården, Höja;900;300;24923,04 ton CO2e;36444,01 ton CO2e;62537,66 ton CO2e
-yta_2;Kvarnby;1 500;1 500;44881,49 ton CO2e;0 ton CO2e;0 ton CO2e
-yta_34;Sibbarp;0;0;0 ton CO2e;54064,02 ton CO2e;96080,44 ton CO2e
-yta_33;Annetorp;2 500;1 000;66862,84 ton CO2e;65099,64 ton CO2e;121810,46 ton CO2e
-yta_32;Elinelund, Kalkbrottet, Del av Vintrie;3 000;1 400;82794,03 ton CO2e;238567,97 ton CO2e;490040,95 ton CO2e
-yta_31;Hyllievång, östra Vintrie;10 000;10 000;317209,94 ton CO2e;9064,64 ton CO2e;18129,28 ton CO2e
-yta_42;Svågertorp;0;2 000;12086,19 ton CO2e;23710,21 ton CO2e;48680 ton CO2e
-yta_41;Lindängen, Almvik;1 000;1 000;31720,99 ton CO2e;11330,8 ton CO2e;22661,6 ton CO2e
-yta_43;Fosie Industriområde;0;2 500;15107,74 ton CO2e;47720,93 ton CO2e;81744,48 ton CO2e
-yta_35;Bunkeflostrand;2 000;1 700;58029,06 ton CO2e;31127,38 ton CO2e;51930,17 ton CO2e
-yta_38;Klagshamn;1 500;300;37629,78 ton CO2e;13596,96 ton CO2e;27193,92 ton CO2e
-yta_36;Naffentorp;0;3 000;18129,28 ton CO2e;17366,09 ton CO2e;29253,23 ton CO2e
-yta_37;Tygelsjö, Västra Klagstorp;800;300;20915,25 ton CO2e;2266,16 ton CO2e;4532,32 ton CO2e
-yta_40;Lockarp;0;500;3021,55 ton CO2e;13596,96 ton CO2e;27193,92 ton CO2e
-yta_39;Glostorp;0;3 000;18129,28 ton CO2e;18272,55 ton CO2e;31066,16 ton CO2e
-yta_44;Oxie Kyrkby, Oxievång;800;500;22123,87 ton CO2e;1812,93 ton CO2e;3625,86 ton CO2e
-yta_1;Södra Salerup;0;400;2417,24 ton CO2e;0 ton CO2e;0 ton CO2e
+yta_27;Ribersborgstranden;0;0;0 ton CO2e;0 ton CO2e;0 ton CO2e
+yta_26;Mellanheden, Ribersborg;100;0;2 600 ton CO2e;1 900 ton CO2e;4 200 ton CO2e
+yta_24;Hästhagen, Allmänna sjukhuset;1 000;1 200;33 400 ton CO2e;24 500 ton CO2e;52 200 ton CO2e
+yta_16;Möllevången, Södervärn;500;500;16 100 ton CO2e;11 900 ton CO2e;25 600 ton CO2e
+yta_17;Sorgenfri, Katrinelund, Värnhem;2 500;1 500;72 100 ton CO2e;53 600 ton CO2e;114 000 ton CO2e
+yta_18;Sofielunds industriområde, Annelund;0;200;1 200 ton CO2e;900 ton CO2e;1 800 ton CO2e
+yta_19;Rosengård centrum, Herrgården, Emilstorp;3 000;1 500;84 700 ton CO2e;62 200 ton CO2e;132 300 ton CO2e
+yta_5;Håkanstorp, Videdal;0;0;0 ton CO2e;0 ton CO2e;0 ton CO2e
+yta_6;Fortuna Hemgården, Toftanäs, Östra Skrävlinge;4 000;6 000;131 800 ton CO2e;98 700 ton CO2e;204 200 ton CO2e
+yta_28;Limhamns Hamnområde;1 000;250;27 200 ton CO2e;20 000 ton CO2e;43 100 ton CO2e
+yta_29;Gamla Limhamn, Djupadal;0;300;1 800 ton CO2e;1 400 ton CO2e;2 700 ton CO2e
+yta_25;Lorensborg, Stadion;2 000;2 000;62 500 ton CO2e;46 000 ton CO2e;97 300 ton CO2e
+yta_30;Holma, Kroksbäck, Kroksbäcksparken;2 300;1 000;63 000 ton CO2e;46 400 ton CO2e;98 000 ton CO2e
+yta_23;Flensburg, Borgmästaregården;900;1 100;30 200 ton CO2e;22 100 ton CO2e;47 200 ton CO2e
+yta_22;Heleneholm, Kulladal;2 000;2 000;62 500 ton CO2e;46 500 ton CO2e;98 400 ton CO2e
+yta_21;Nydala, Gullviksborg;500;100;13 400 ton CO2e;10 000 ton CO2e;21 500 ton CO2e
+yta_20;Persborg, Augustenborg;500;400;14 800 ton CO2e;11 000 ton CO2e;23 200 ton CO2e
+yta_3;Elisedal, Jägerso;3 500;1 000;92 800 ton CO2e;69 000 ton CO2e;146 200 ton CO2e
+yta_4;Almgården, Höja;900;300;24 900 ton CO2e;18 100 ton CO2e;38 900 ton CO2e
+yta_2;Kvarnby;1 500;1 500;44 900 ton CO2e;33 200 ton CO2e;69 000 ton CO2e
+yta_34;Sibbarp;0;0;0 ton CO2e;0 ton CO2e;0 ton CO2e
+yta_33;Annetorp;2 500;1 000;66 900 ton CO2e;49 800 ton CO2e;104 600 ton CO2e
+yta_32;Elinelund, Kalkbrottet, Del av Vintrie;3 000;1 400;82 800 ton CO2e;61 300 ton CO2e;129 500 ton CO2e
+yta_31;Hyllievång, östra Vintrie;10 000;10 000;317 200 ton CO2e;234 300 ton CO2e;498 600 ton CO2e
+yta_42;Svågertorp;0;2 000;12 100 ton CO2e;9 100 ton CO2e;18 100 ton CO2e
+yta_41;Lindängen, Almvik;1 000;1 000;31 700 ton CO2e;23 300 ton CO2e;49 500 ton CO2e
+yta_43;Fosie Industriområde;0;2 500;15 100 ton CO2e;11 300 ton CO2e;22 700 ton CO2e
+yta_35;Bunkeflostrand;2 000;1 700;58 000 ton CO2e;43 400 ton CO2e;90 300 ton CO2e
+yta_38;Klagshamn;1 500;300;37 600 ton CO2e;27 900 ton CO2e;58 300 ton CO2e
+yta_36;Naffentorp;0;3 000;18 100 ton CO2e;13 600 ton CO2e;27 200 ton CO2e
+yta_37;Tygelsjö, Västra Klagstorp;800;300;20 900 ton CO2e;15 700 ton CO2e;32 700 ton CO2e
+yta_40;Lockarp;0;500;3 000 ton CO2e;2 300 ton CO2e;4 500 ton CO2e
+yta_39;Glostorp;0;3 000;18 100 ton CO2e;13 600 ton CO2e;27 200 ton CO2e
+yta_44;Oxie Kyrkby, Oxievång;800;500;22 100 ton CO2e;16 600 ton CO2e;34 500 ton CO2e
+yta_1;Södra Salerup;0;400;2 400 ton CO2e;1 800 ton CO2e;3 600 ton CO2e
