@@ -168,6 +168,7 @@
   background: rgba(202, 221, 210, 1);
 }
 
+
 /* Bildspel: håll en stabil storlek och flytta vänster när viewport blir smalare */
 #slideshow {
   position: fixed;
@@ -181,6 +182,7 @@
   padding-top: 0;                   /* ta bort negativa paddings */
   padding-left: 0;                  /* viktigt: ersätter din 570px padding */
   cursor: pointer;
+  pointer-events: auto;
   user-select: none;
 }
 
@@ -205,6 +207,52 @@
   background: white;
 }
 
+
+
+/* Pilar */
+.nav-arrow{
+  position: absolute;
+  bottom: 128px;                 /* “långt nere” – justera vid behov */
+  width: 48px;
+  height: 48px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  opacity: 0.65;
+}
+
+.nav-arrow:hover{ opacity: 1; }
+
+/* Trianglar med border-trick */
+.nav-left::before,
+.nav-right::before{
+  content:"";
+  display:block;
+  width:0;
+  height:0;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+}
+
+.nav-left{
+  left: 130px;
+}
+.nav-left::before{
+  border-right: 18px solid #90b19e;  /* pekar vänster */
+}
+
+.nav-right{
+  right: 104px;
+}
+.nav-right::before{
+  border-left: 18px solid #90b19e;   /* pekar höger */
+}
+
+/* Lägg pilarna ovanpå bilden */
+#slideshow img{
+  display:block;
+}
 
 /* MOBIL */
 @media (max-width: 600px) {
@@ -296,11 +344,11 @@
     </button>
   </div>
 
-  <section id="content">
-    <!-- Flik 1: Bildspel -->
-    <div id="slideshow" title="Klicka för nästa bild">
-      <img id="slideImg" alt="Bildspel" />
-    </div>
+ <div id="slideshow" title="Klicka för nästa bild">
+  <button class="nav-arrow nav-left" type="button" aria-label="Föregående bild"></button>
+  <img id="slideImg" alt="Bildspel" />
+  <button class="nav-arrow nav-right" type="button" aria-label="Nästa bild"></button>
+</div>
 
     <!-- Flik 2: Annat innehåll -->
     <div id="plan-content">
@@ -340,7 +388,6 @@
   function render() {
     if (!builtSlides.length) return;
     slideImg.src = builtSlides[slideIndex];
-    if (slideHint) slideHint.textContent = ""; // eller ta bort helt
   }
 
   function nextSlide() {
@@ -349,16 +396,30 @@
     render();
   }
 
-  // Klick på bildytan = nästa bild
-  if (slideshow) {
-    slideshow.addEventListener("click", nextSlide);
-  } else {
-    // fallback: om du råkar sakna #slideshow, byt på klick var som helst (utom knappar)
-    document.addEventListener("click", (e) => {
-      if (e.target.closest("#actions")) return;
-      nextSlide();
-    });
+  function prevSlide() {
+    if (!builtSlides.length) return;
+    slideIndex = (slideIndex - 1 + builtSlides.length) % builtSlides.length;
+    render();
   }
+
+
+  // Klick på bilden = nästa (valfritt)
+  slideshow.addEventListener("click", (e) => {
+    // om man klickar på en pil ska inte bilden också trigga
+    if (e.target.closest(".nav-arrow")) return;
+    nextSlide();
+  });
+
+  // Pilar
+  document.querySelector(".nav-left").addEventListener("click", (e) => {
+    e.stopPropagation();
+    prevSlide();
+  });
+
+  document.querySelector(".nav-right").addEventListener("click", (e) => {
+    e.stopPropagation();
+    nextSlide();
+  });
 
   render();
 </script>
