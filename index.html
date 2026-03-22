@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interaktiv karta</title>
+  <style>
+    /* Lägg till @font-face för att ladda OTF-filerna */
+    @font-face {
+      font-family: 'CircularStd-Bold';
+      src: url('font/CircularStd-Bold.otf') format('opentype');
+    }
+
+    @font-face {
+      font-family: 'CircularStd-Book';
+      src: url('font/CircularStd-Book.otf') format('opentype');
+    }
+
+    @font-face {
+  font-family: 'IvarText-Regular';
+  src: url('font/IvarText-Regular.otf') format('opentype');
+}
+
+    /* Titeln */
+    #title {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  font-size: 4vw;
+  font-family: 'CircularStd-Bold';
+  line-height: 1.2;
+  color: #90b19e;
+  z-index: 20;
+}
+
+    /* Rad 2 - Lite mindre och med normal vikt */
+    #title span {
+      font-family: 'CircularStd-Book'; /* Använd bok-versionen */
+      font-weight: normal;
+      font-size: 3vw; /* Standardstorlek för rad 2 */
+      display: block; /* Se till att den kommer på en ny rad */
+      margin-top: 10px; /* Lägg till lite mellanrum mellan raderna */
+    }
+
+    /* Brödtext */
+    #body-text {
+  position: absolute;
+  top: 250px;
+  left: 40px;
+  width: 50%;
+  font-family: 'CircularStd-Book';
+  font-size: 1.2vw;
+  line-height: 1.4;
+  color: #90b19e;
+  z-index: 20;
+}
+    /* Grundläggande stilar för body och html för att göra hela sidan full höjd */
+  html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;  /* Horisontellt centrerad */
+  align-items: center;      /* Vertikalt centrerad */
+  background-color: rgb(215, 226, 220);  /* Ljus bakgrundsfärg för hela sidan */
+}
+
+/* Skapa en container för att hålla SVG-kartan */
+#karta-container {
+  width: 100%;              /* Full bredd */
+  height: 80vh;             /* Höjd på container satt till 80% av fönstrets höjd */
+  display: flex;
+  justify-content: center;  /* Horisontellt centrerad */
+  align-items: center;      /* Vertikalt centrerad */
+  background-color: transparent;
+}
+
+/* Justera SVG:n för att den ska vara centrerad inom container och flytta den lite åt höger */
+#karta {
+  width: 100%;              /* Gör kartan till 100% av container-bredden */
+  height: 100%;             /* Gör kartan till 100% av container-höjden */
+  max-width: 1200px;        /* Maxbredd på kartan */
+  box-sizing: border-box;   /* Se till att padding och border tas med i storleken */
+  display: block;           /* Gör SVG:n till ett blockelement */
+  margin: 0 auto;           /* Gör så att SVG:n är centrerad horisontellt inom container */
+  margin-left: 18%;
+  margin-top: -5%;         /* Flytta kartan lite åt höger */
+  background: transparent;
+}
+
+/* Inforutan */
+#inforuta {
+  display: none;
+  padding: 10px;
+  position: fixed;
+  width: 260px;          /* lite bredare pga fler rader */
+  bottom: 40px;
+  right: -40px;
+}
+
+#inforuta #titel {
+  font-family: 'CircularStd-Bold', sans-serif;
+  font-size: 1.2em;
+  color: #90b19e;
+  margin: 0 0 10px 0;
+}
+
+#inforuta .rad {
+  margin: 6px 0;
+  line-height: 1.25;
+}
+
+#inforuta .label {
+  display: block; /* label på egen rad */
+  font-family: 'CircularStd-Bold', sans-serif;
+  font-size: 0.95em;
+  color: #90b19e;
+}
+
+#inforuta .value {
+  display: block; /* värdet på egen rad */
+  font-family: 'IvarText-Regular', sans-serif;
+  font-size: 1em;
+  color: #90b19e;
+}
+
+
+/* Knappar under text */
+#actions {
+  position: absolute;
+  top: 400px;
+  left: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: min(60ch, 60vw);
+  z-index: 20;
+}
+
+.btn {
+  appearance: none;
+  width: 320px;
+  border: none;
+  background: none;
+  padding: 14px 16px;
+  border-radius: 12px;
+  text-align: left;
+  font-family: 'CircularStd-Book';
+  font-size: 1rem;
+  cursor: pointer;
+  color: #90b19e; 
+  transition: transform 0.06s ease, background 0.2s ease, border-color 0.2s ease;
+}
+.btn:hover { background:rgba(144,177,158,0.18); }
+.btn:active { transform: translateY(1px); }
+
+.btn[aria-pressed="true"] {
+  border: none;
+  background: rgba(144,177,158,0.18);
+}
+
+/* Innehållsområde (byter innehåll) */
+#content {
+  position: fixed;
+  inset: 0;          /* top:0 right:0 bottom:0 left:0 */
+  transform: none;
+  width: 100vw;
+  height: 100vh;
+  border: none;
+  background: transparent;
+  z-index: -1;       /* om du vill ha den bakom texter/knappar */
+  background: rgba(202, 221, 210, 1);
+}
+
+
+/* Bildspel: håll en stabil storlek och flytta vänster när viewport blir smalare */
+#slideshow {
+  position: fixed;
+  top: 0;
+  left: clamp(16px, 35vw, 570px);
+  width: min(900px, 80vw);
+  height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  cursor: pointer;
+  pointer-events: auto;
+  user-select: none;
+  z-index: 1;
+}
+
+#slideshow img {
+  width: min(900px, 80vw);          /* samma logik som containern */
+  height: auto;
+  max-height: 90vh;                  /* håller den inom skärmen */
+  object-fit: contain;
+  display: block;
+  background: none;
+}
+
+/* Flik 2 innehåll */
+#plan-content {
+  width: 100%;
+  height: 100%;
+  display: none;
+  padding: 18px;
+  font-family: 'CircularStd-Book';
+  color: #222;
+  overflow: auto;
+  background: white;
+}
+
+
+
+/* Pilar */
+.nav-arrow{
+  position: absolute;
+  bottom: 128px;                 /* “långt nere” – justera vid behov */
+  width: 48px;
+  height: 48px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  opacity: 0.65;
+}
+
+.nav-arrow:hover{ opacity: 1; }
+
+/* Trianglar med border-trick */
+.nav-left::before,
+.nav-right::before{
+  content:"";
+  display:block;
+  width:0;
+  height:0;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+}
+
+.nav-left{
+  left: 130px;
+}
+.nav-left::before{
+  border-right: 18px solid #90b19e;  /* pekar vänster */
+}
+
+.nav-right{
+  right: 104px;
+}
+.nav-right::before{
+  border-left: 18px solid #90b19e;   /* pekar höger */
+}
+
+/* Lägg pilarna ovanpå bilden */
+#slideshow img{
+  display:block;
+}
+
+/* MOBIL */
+@media (max-width: 600px) {
+  html, body {
+    overflow: hidden; /* stoppa sidscroll på mobil */
+  } 
+
+  #karta-container {
+    height: 100vh;
+    overflow: hidden;
+    justify-content: flex-start;
+  }
+
+  #karta {
+    flex-shrink: 0;         /* ✅ MINIMALA FIXEN */
+    width: 150vw;           /* större */
+    height: auto !important;/* viktigt: låt bredden styra */
+    max-width: none;
+
+    margin: 0;
+    transform: translateX(-9vw);
+  }
+
+  #title {
+    font-size: 10vw;
+    top: 20px;
+    left: 20px;
+  }
+
+  #title span {
+    font-size: 8vw;
+  }
+  #inforuta {
+    right: -120px;      /* flyttar den längre åt höger */
+    bottom: 30px;     /* lite högre upp om du vill */
+    width: 70vw;      /* bättre anpassad till mobil */
+    max-width: none;
+  }
+}
+/* Responsiv justering för större skärmar (t.ex. tablets eller större enheter) */
+@media (max-width: 1024px) {
+  #karta {
+    height: 70vh;
+    margin-left: 0;
+    margin-top: 0;
+  }
+
+  #title {
+    font-size: 8vw;
+  }
+
+  #title span {
+    font-size: 6vw;
+  }
+}
+
+    /* Standardstil för ytor */
+    path[id^="yta_"], polygon[id^="yta_"] {
+      fill: rgba(255, 255, 255, 0.6); /* Standardfärg för ytor */
+      transition: fill 0.3s ease; /* Gör övergången mjuk när fill-färgen ändras */
+      stroke: #9abea9; /* Standard stroke-färg, om du inte vill ändra stroke */
+    }
+
+    /* Hover-effekt för ytor */
+    path[id^="yta_"]:hover, polygon[id^="yta_"]:hover {
+      fill: #90b19e; /* Ljusare färg för att markera när man hovrar */
+      cursor: pointer; /* Ändra muspekaren till en pekare när man hovrar */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Titeln -->
+  <div id="title">
+    Klimatprognos <span>Malmö Stads Översiktsplan</span>
+  </div>
+
+  <div id="body-text">
+  En klimatprognos av det klimatavtryck som uppstår <br>
+  av den förväntade utbyggnadskapaciteten av bostäder och <br>
+  arbetstillfällen enligt översiktsplanen 2023.
+</div>
+ <div id="actions">
+    <button class="btn" id="btn-built" type="button" aria-pressed="true">
+      Om bebyggelsens klimatpåverkan
+    </button>
+    <button class="btn" onclick="window.location.href='index-2.html'">
+      Om översiktsplanens klimatpåverkan
+    </button>
+  </div>
+
+ <div id="slideshow" title="Klicka för nästa bild">
+  <button class="nav-arrow nav-left" type="button" aria-label="Föregående bild"></button>
+  <img id="slideImg" alt="Bildspel" />
+  <button class="nav-arrow nav-right" type="button" aria-label="Nästa bild"></button>
+</div>
+
+    <!-- Flik 2: Annat innehåll -->
+    <div id="plan-content">
+      <h2 style="margin-top:0;">Översiktsplanens klimatpåverkan</h2>
+      <p>
+        Här lägger du innehållet för knapp 2. Det kan vara text, bilder, diagram,
+        eller ett annat bildspel om du vill.
+      </p>
+      <p>
+        Exempel: sammanfattning, punkter, länkar, osv.
+      </p>
+    </div>
+  </section>
+<script>
+  const builtSlides = [
+    "img/built-01.jpg",
+    "img/built-02.jpg",
+    "img/built-03.jpg",
+    "img/built-04.jpg",
+    "img/built-05.jpg",
+    "img/built-06.jpg"
+  ];
+
+  let slideIndex = 0;
+
+  const slideshow = document.getElementById("slideshow");
+  const slideImg = document.getElementById("slideImg");
+
+  // (valfritt) om du fortfarande har slideHint i HTML så uppdateras den,
+  // annars ignoreras den utan att krascha:
+  const slideHint = document.getElementById("slideHint");
+
+  // Preload
+  builtSlides.forEach(src => { const i = new Image(); i.src = src; });
+
+  function render() {
+    if (!builtSlides.length) return;
+    slideImg.src = builtSlides[slideIndex];
+  }
+
+  function nextSlide() {
+    if (!builtSlides.length) return;
+    slideIndex = (slideIndex + 1) % builtSlides.length;
+    render();
+  }
+
+  function prevSlide() {
+    if (!builtSlides.length) return;
+    slideIndex = (slideIndex - 1 + builtSlides.length) % builtSlides.length;
+    render();
+  }
+
+
+  // Klick på bilden = nästa (valfritt)
+  slideshow.addEventListener("click", (e) => {
+    // om man klickar på en pil ska inte bilden också trigga
+    if (e.target.closest(".nav-arrow")) return;
+    nextSlide();
+  });
+
+  // Pilar
+  document.querySelector(".nav-left").addEventListener("click", (e) => {
+    e.stopPropagation();
+    prevSlide();
+  });
+
+  document.querySelector(".nav-right").addEventListener("click", (e) => {
+    e.stopPropagation();
+    nextSlide();
+  });
+
+  render();
+</script>
+</body>
+</html>
