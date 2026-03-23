@@ -705,19 +705,20 @@
       const rubrik1 = document.getElementById("rubrik1");
       const rubrik2 = document.getElementById("rubrik2");
 
+      let defaultTimeout = null;
+
       function uppdateraInforuta(ytaInfo) {
         if (!ytaInfo) return;
 
-        document.getElementById('titel').innerText = ytaInfo.titel || '';
-        document.getElementById('antal_bostader').innerText = ytaInfo.antal_bostader || '';
-        document.getElementById('antal_arbetstillfallen').innerText = ytaInfo.antal_arbetstillfallen || '';
-        document.getElementById('lfm_30').innerText = ytaInfo.lfm_30 || '';
-        document.getElementById('best_practice').innerText = ytaInfo.best_practice || '';
-        document.getElementById('business_as_usual').innerText = ytaInfo.business_as_usual || '';
+        document.getElementById("titel").innerText = ytaInfo.titel || "";
+        document.getElementById("antal_bostader").innerText = ytaInfo.antal_bostader || "";
+        document.getElementById("antal_arbetstillfallen").innerText = ytaInfo.antal_arbetstillfallen || "";
+        document.getElementById("lfm_30").innerText = ytaInfo.lfm_30 || "";
+        document.getElementById("best_practice").innerText = ytaInfo.best_practice || "";
+        document.getElementById("business_as_usual").innerText = ytaInfo.business_as_usual || "";
       }
 
       function showDefaultMode() {
-        // Visa båda trapporna + default-info i inforutan
         uppdateraInforuta(defaultInfo);
         infoRuta.style.display = "block";
         emissionsStair.style.display = "grid";
@@ -727,7 +728,6 @@
       }
 
       function showHoverMode(ytaInfo) {
-        // Visa områdets info, dölj emissions-trappan
         uppdateraInforuta(ytaInfo);
         infoRuta.style.display = "block";
         emissionsStair.style.display = "none";
@@ -735,7 +735,6 @@
         rubrik2.style.display = "none";
       }
 
-      // Sätt emissionsvärden (default-trappan)
       const bauEmissions = "500 kg CO2e per person och år";
       const lfm30Emissions = "330 kg CO2e per person och år";
       const bpEmissions = "250 kg CO2e per person och år";
@@ -744,19 +743,20 @@
       document.getElementById("lfm30-value").textContent = lfm30Emissions;
       document.getElementById("bp-value").textContent = bpEmissions;
 
-      // Startläge
       showDefaultMode();
 
-      // HOVER = "valt område"
       document.querySelectorAll('path[id^="yta_"], polygon[id^="yta_"]').forEach(function(element) {
 
-        element.addEventListener('mouseenter', function() {
+        element.addEventListener("mouseenter", function() {
+          clearTimeout(defaultTimeout);
           const ytaInfo = data.find(row => row.yta_id === element.id);
           showHoverMode(ytaInfo);
         });
 
-        element.addEventListener('mouseleave', function() {
-          showDefaultMode();
+        element.addEventListener("mouseleave", function() {
+          defaultTimeout = setTimeout(function() {
+            showDefaultMode();
+          }, 100);
         });
 
       });
